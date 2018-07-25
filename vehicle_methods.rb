@@ -16,3 +16,5 @@ end
 sound_horn
 accelerate
 use_headlights()
+use_headlights("High-Beams")
+use_headlights("Jim-Beam")
