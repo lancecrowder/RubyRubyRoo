@@ -13,7 +13,7 @@ puts "I'm thinking of a number between 1 and 100."
 puts "Can you guess it, in 7 guesses or less?"
 target = rand(100)+1
 
-# 3. Keep track of number of player guesses.  Let them know how namy they have left before each turn
+# 3. Keep track of number of player guesses.  Let them know how many they have left before each turn
 num_guesses = 0
 guessed_it = false
 
