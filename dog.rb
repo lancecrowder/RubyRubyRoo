@@ -1,32 +1,31 @@
 class Dog
 
-  # def name=(new_value)
-  #   @name = new_value
-  # end
-  #
-  # def name
-  #   @name
-  # end
-  #
-  # def age=(new_value)
-  #   @age = new_value
-  # end
-  #
-  # def age
-  #   @age
-  # end
   attr_accessor :name, :age
+
+  def name= (value)
+    if value == ""
+      raise "Name cannot be Blank!!!"
+    end
+      @name = value
+  end
+
+  def age= (value)
+    if value < 0
+      raise "An age value of #{value} is not valid!"
+    end
+      @age = value
+  end
 
   def report_age
     puts "#{@name} is #{@age} years old"
   end
 
-  def talk(name)
-    puts "#{name} says \"Bark 'N Stuff!\""
+  def talk
+    puts "#{@name} says \"Bark 'N Stuff!\""
   end
 
-  def move(name, destination)
-    puts "#{name} is running to the #{destination}"
+  def move(destination)
+    puts "#{@name} is running to the #{destination}"
   end
 
 end
@@ -41,5 +40,5 @@ bat.age = 1
 
 stripe.report_age
 bat.report_age
-# stripe.talk("Stripe")
-# stripe.move("Stripe","Hizzy fo Shizzy!")
+stripe.talk
+stripe.move("Hizzy fo Shizzy!")
