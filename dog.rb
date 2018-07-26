@@ -1,20 +1,21 @@
 class Dog
 
-  def name=(new_value)
-    @name = new_value
-  end
-
-  def name
-    @name
-  end
-
-  def age=(new_value)
-    @age = new_value
-  end
-
-  def age
-    @age
-  end
+  # def name=(new_value)
+  #   @name = new_value
+  # end
+  #
+  # def name
+  #   @name
+  # end
+  #
+  # def age=(new_value)
+  #   @age = new_value
+  # end
+  #
+  # def age
+  #   @age
+  # end
+  attr_accessor :name, :age
 
   def report_age
     puts "#{@name} is #{@age} years old"
