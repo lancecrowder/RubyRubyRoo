@@ -1,5 +1,8 @@
 require './animal'
 class Dog < Animal
+  def to_s
+    "#{@name} the dog, is #{@age} years old!"
+  end
 end
 
 stripe = Dog.new
@@ -14,3 +17,5 @@ stripe.report_age
 bat.report_age
 stripe.talk
 stripe.move("Hizzy fo Shizzy!")
+
+puts stripe, bat
