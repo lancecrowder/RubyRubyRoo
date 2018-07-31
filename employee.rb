@@ -11,9 +11,14 @@ class Employee
 
   def salary= (value)
     if value <=0
-      raise "A salary of #{@salary} is not valid!"
+      raise "Salary value is not valid!"
     end
     @salary = value
+  end
+
+  def initialize (name = "Anon E. Mouse", salary = 0.0)
+    self.name = name
+    self.salary = salary
   end
 
   def print_pay_stub
@@ -22,16 +27,16 @@ class Employee
     puts format("Pay This Period: $%.2f", period_pay)
   end
 
-  kate = Employee.new
-  kate.name = "Kate Skate"
-  kate.salary = 50000
-
+  kate = Employee.new("Kate Skate", 50000)
   kate.print_pay_stub
 
   puts "-" * 30
 
-  bob = Employee.new
-  bob.name = "Bob Oso"
-  bob.salary = 100000
+  bob = Employee.new("Bob Oso", 55000)
   bob.print_pay_stub
+
+  puts "-" * 30
+
+  employee = Employee.new("steve", -500)
+  employee.print_pay_stub
 end
