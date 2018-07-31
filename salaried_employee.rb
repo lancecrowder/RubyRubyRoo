@@ -9,10 +9,10 @@ class SalariedEmployee < Employee
     @salary = salary
   end
 
-  # def initialize(name, salary = 0.0)
-  #   self.name = name
-  #   self.salary = salary
-  # end
+  def initialize(name = "Anon E. Mouse", salary = 0.0)
+    self.name = name
+    self.salary = salary
+  end
 
   def print_pay_stub
     print_name
@@ -20,9 +20,9 @@ class SalariedEmployee < Employee
     puts format("Pay This Period: $%.2f", period_pay)
   end
 
-  kate = SalariedEmployee.new
-  kate.name = "Ema Nymton"
-  kate.salary = 50000
+  kate = SalariedEmployee.new("Ema Nymton", 50000)
+  # kate.name = "Ema Nymton"
+  # kate.salary = 50000
   kate.print_pay_stub
 
   puts "-" * 30
@@ -33,4 +33,7 @@ class SalariedEmployee < Employee
   bob.print_pay_stub
 
   puts "-" * 30
+
+  mouse = SalariedEmployee.new
+  mouse.print_pay_stub
 end

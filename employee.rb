@@ -2,7 +2,7 @@ class Employee
 
   attr_accessor :name
 
-  def name=(name = "Anon E. Mouse")
+  def name=(name)
     if name == ""
       raise "Name cannot be Blank!!!"
     end
