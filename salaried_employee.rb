@@ -1,8 +1,9 @@
 require "./employee"
 class SalariedEmployee < Employee
-  attr_accessor :salary
 
-  def salary= (salary)
+  attr_reader :salary
+
+  def salary=(salary)
     if salary < 0
       raise "Salary value is not valid!"
     end
@@ -10,7 +11,7 @@ class SalariedEmployee < Employee
   end
 
   def initialize(name = "Anon E. Mouse", salary = 0.0)
-    self.name = name
+    super(name)
     self.salary = salary
   end
 
@@ -27,13 +28,10 @@ class SalariedEmployee < Employee
 
   puts "-" * 30
 
-  bob = SalariedEmployee.new
-  bob.name = "Bob Oso"
-  bob.salary = 55000
+  bob = SalariedEmployee.new("Bob Oso", 55000)
+  # bob.name = "Bob Oso"
+  # bob.salary = 55000
   bob.print_pay_stub
 
   puts "-" * 30
-
-  mouse = SalariedEmployee.new
-  mouse.print_pay_stub
 end

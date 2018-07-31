@@ -11,13 +11,25 @@ class HourlyEmployee < Employee
 
   def hours_per_week=(hours_per_week)
     if hours_per_week < 0
-      puts "Hours / Week is not valid"
+      puts "Hours per Week is not valid"
     end
     @hours_per_week = hours_per_week
   end
 
+  def self.security_guard(name)
+    HourlyEmployee.new(name,19.25, 30)
+  end
+
+  def self.cashier(name)
+    HourlyEmployee.new(name, 12.75, 25)
+  end
+
+  def self.janitor(name)
+    HourlyEmployee.new(name, 10.50, 20)
+  end
+
   def initialize(name = "Anon E. Mouse", hourly_wage = 0.0, hours_per_week = 0.0)
-    self.name = name
+    super (name)
     self.hourly_wage = hourly_wage
     self.hours_per_week = hours_per_week
   end
@@ -29,7 +41,7 @@ class HourlyEmployee < Employee
   end
 
   puts "-" * 30
-  steve = HourlyEmployee.new("Scuba Steve", 15.25, 35)
+  steve = HourlyEmployee.security_guard("Scuba Steve")
   # steve.name = "Scuba Steve"
   # steve.hourly_wage = 15.25
   # steve.hours_per_week = 35
