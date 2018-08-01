@@ -14,5 +14,5 @@ candace = betty
 
 betty.request_date
 candace.request_date
-p betty.object_id
-p candace.object_id
+
+puts betty.inspect, candace.inspect
