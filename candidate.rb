@@ -1,11 +1,11 @@
 class Candidate
   attr_accessor :name, :age, :occupation, :hobby, :birthplace
-  def initialize(name, options = {})
+  def initialize(name, age: nil, occupation: nil, hobby: nil, birthplace: "San Antonio")
     self.name = name
-    self.age = options[:age]
-    self.occupation = options[:occupation]
-    self.hobby = options[:hobby]
-    self.birthplace = options[:birthplace]
+    self.age = age
+    self.occupation = occupation
+    self.hobby = hobby
+    self.birthplace = birthplace
   end
 end
 
@@ -19,7 +19,7 @@ end
 
 candidate1 = Candidate.new("Bob Oso", {:age => 49, :occupation => "Attorney", :hobby => "Wheelbarrow Racing!", :birthplace => "Miami"})
 candidate2 = Candidate.new("Ema Nymton", :birthplace => "Somerset", :hobby => "Beer", :occupation => "CI-Yay", :age => 42)
-candidate3 = Candidate.new("Faye Kerr", birthplace: "San Anto", hobby: "Vodka", occupation: "Mom", age: 43)
+candidate3 = Candidate.new("Faye Kerr", birthplace: "San Diego", hobby: "Vodka", occupation: "Mom", age: 43)
 candidate4 = Candidate.new("Ricky Bobby", age: 29)
 candidate5 = Candidate.new("Bobby Ricky")
 puts "-" * 30
