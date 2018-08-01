@@ -10,7 +10,7 @@ class LoveInterest
 end
 
 betty = LoveInterest.new
-candace = LoveInterest.new
+candace = betty
 
 betty.request_date
 candace.request_date
