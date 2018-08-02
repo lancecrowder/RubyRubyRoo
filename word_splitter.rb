@@ -1,4 +1,7 @@
 class WordSplitter
+
+  include Enumerable
+
   attr_accessor :string
 
   def each
