@@ -16,14 +16,17 @@ class Steak
   end
 end
 
-first_steak = Steak.new
-first_steak.grade = "Prime"
-second_steak = Steak.new
-second_steak.grade = "Choice"
+prime = Steak.new
+choice = Steak.new
+select = Steak.new
+prime.grade = "Prime"
+choice.grade = "Choice"
+select.grade = "Select"
 
-puts first_steak <=> second_steak
-puts second_steak <=> first_steak
-
-# if first_steak < second_steak
-#   puts "I'll take the #{first_steak.inspect}"
-# end
+puts "prime > choice: #{prime > choice}"
+puts "prime < select: #{prime < select}"
+puts "select == slect: #{select == select}"
+puts "select <= select: #{select <= select}"
+puts "select >= choice: #{select >= choice}"
+print "choice.between? (select, prime): "
+puts choice.between?(select, prime)
