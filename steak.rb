@@ -1,5 +1,4 @@
 class Steak
-
   include Comparable
 
   GRADE_SCORES = {"Prime" => 3, "Choice" => 2, "Select" => 1}
