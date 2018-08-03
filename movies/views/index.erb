@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Lance's Movies</title>
+  <meta charset="UTF-8">
+  <title>Lance's Movies</title>
   <style>
-    body{
+    body {
       background-color: palegoldenrod;
     }
   </style>
@@ -12,11 +12,9 @@
 <body>
 <h1>Lance's Movies</h1>
 <ul>
-    <% @movies.each do |movie|  %>
-      <li><h3><%= movie.title %></h3></li>
-      <li><%= movie.director %></li>
-      <li><%= movie.year %></li>
-    <% end %>
+  <% @movies.each do |movie| %>
+    <li><a href="/movies/<%= movie.id %>"><%= movie.title %></a></li>
+  <% end %>
 </ul>
 <a href="/movies/new"> Add New Movie</a>
 </body>

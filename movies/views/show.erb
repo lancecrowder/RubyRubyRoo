@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lance's Movies - <%= @movie.title %></title>
+  <style>
+    body {
+      background-color: palegoldenrod;
+    }
+  </style>
+</head>
+<body>
+<h1><%= @movie.title %></h1>
+<table>
+  <tr>
+    <td><strong>Title:</strong></td>
+    <td><%= @movie.title %></td>
+  </tr>
+  <tr>
+    <td><strong>Director:</strong></td>
+    <td><%= @movie.director %></td>
+  </tr>
+  <tr>
+    <td><strong>Year Released:</strong></td>
+    <td><%= @movie.year %></td>
+  </tr>
+</table>
+<a href="/movies">Back to Index</a>
+</body>
+</html>

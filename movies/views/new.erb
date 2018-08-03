@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Lance's Movies</title>
+  <style>
+    body {
+      background-color: palegoldenrod;
+    }
+  </style>
 </head>
 <body>
 <h1>Add New Movie</h1>
-<form action="#">
+<form method="post" action="/movies/create">
   <table>
     <tr>
       <td><label for="title">Title:</label></td>
@@ -18,9 +23,11 @@
     </tr>
     <tr>
       <td><label for="year">Year Released:</label></td>
-      <td><input type="number" name="Year"></td>
+      <td><input type="date" name="year"></td>
     </tr>
-    <tr><td><input type="submit"></td></tr>
+    <tr>
+      <td><input type="submit"></td>
+    </tr>
   </table>
 </form>
 <a href="/movies">Back to Movie Index</a>

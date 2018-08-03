@@ -1,0 +1,21 @@
+---
+1: !ruby/object:Movie
+  title: Star Wars
+  director: George Lucas
+  year: '1977-05-25'
+  id: 1
+2: !ruby/object:Movie
+  title: Goodies
+  director: Rob Oso
+  year: '2018-08-01'
+  id: 2
+3: !ruby/object:Movie
+  title: Goodies 2
+  director: Bob Oso
+  year: '2018-08-03'
+  id: 3
+4: !ruby/object:Movie
+  title: Nestor
+  director: Nestor
+  year: '2018-01-01'
+  id: 4

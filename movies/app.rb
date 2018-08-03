@@ -1,23 +1,30 @@
 require 'sinatra'
 require '../movies/lib/movie'
+require '../movies/lib/movie_store'
+
+store = MovieStore.new('movies.yml')
 
 get('/movies') do
-  @movies = []
-  @movies[0] = Movie.new
-  @movies[0].title = "Jaws"
-  @movies[0].director = "Steven Spielberg"
-  @movies[0].year = "1975"
-  @movies[1] = Movie.new
-  @movies[1].title = "Alien"
-  @movies[1].director = "Ridley Scott"
-  @movies[1].year = "1979"
-  @movies[2] = Movie.new
-  @movies[2].title = "Terminator"
-  @movies[2].director = "James Cameron"
-  @movies[2].year = "1984"
+  @movies = store.all
   erb :index
 end
 
 get("/movies/new") do
   erb :new
+end
+
+post("/movies/create") do
+  # "Received: #{params.inspect}"
+  @movie = Movie.new
+  @movie.title = params['title']
+  @movie.director = params['director']
+  @movie.year = params['year']
+  store.save(@movie)
+  redirect 'movies/new'
+end
+
+get('/movies/:id') do
+  id = params['id'].to_i
+  @movie = store.find(id)
+  erb :show
 end
